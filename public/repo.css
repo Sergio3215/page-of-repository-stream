@@ -1,20 +1,21 @@
-#item--ITM{
-    border: 1px solid black;
-    border-radius: 0.4rem;
-    margin: 2rem;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    min-width: 418px;
-    max-width: 418px;
+#item--ITM {
+  border: 1px solid black;
+  border-radius: 0.4rem;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  min-width: 418px;
+  max-width: 418px;
+  padding: 1rem 0;
 }
 
-#item--Container{
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
+#item--Container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
 }
