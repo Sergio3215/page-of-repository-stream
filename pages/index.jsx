@@ -9,7 +9,7 @@ export default function App() {
       "https://api.github.com/search/repositories?q=%20user:Sergio3215%20topic:stream"
     );
     const repo = await ftch.json();
-    console.log(repo);
+    // console.log(repo);
     let data = [];
 
     repo.items.map((git) => {
