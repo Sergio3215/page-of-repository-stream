@@ -9,7 +9,7 @@ export default function App() {
       "https://api.github.com/search/repositories?q=%20user:Sergio3215%20topic:stream"
     );
     const repo = await ftch.json();
-    // console.log(repo);
+    console.log(repo);
     let data = [];
 
     repo.items.map((git) => {
@@ -20,6 +20,7 @@ export default function App() {
         language,
         downloads_url,
         created_at,
+        description,
       } = git;
 
       data.push({
@@ -28,6 +29,7 @@ export default function App() {
         create: created_at.replace("T", " ").replace("Z", " "),
         language: language,
         downloads: `https://github.com/Sergio3215/${name}/archive/refs/heads/${default_branch}.zip`,
+        description: (description == null)?"none":description,
       });
     });
 
@@ -52,14 +54,22 @@ export default function App() {
       <div id="item--Container">
         {data != [] ? (
           data.map((dt) => (
-            <div id="item--ITM">
+            <div id="item--ITM" style={{
+              display: "flex",
+              alignContent: "center",
+              justifyContent: "center",
+              textAlign: "center",
+            }}>
               <div>
-                <h2>
+                <h1>
                   {" "}
                   <Link href={"https://github.com/Sergio3215/" + dt.name}>
                     {dt.name}
                   </Link>{" "}
-                </h2>
+                </h1>
+              </div>
+              <div>
+                <h3>Descripción: {dt.description}</h3>
               </div>
               <div>
                 <h3>Lenguaje: {dt.language}</h3>
