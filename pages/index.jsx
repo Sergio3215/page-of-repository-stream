@@ -40,7 +40,10 @@ export default function App() {
 
   return (
     <>
-      <h1><u>Repositorios del stream! de Principiante en Programar</u></h1>
+      <h1 style={{
+        display:"flex",
+        justifyContent: "center",
+      }}><u>Repositorios del stream! de Principiante en Programar</u></h1>
       <div id="item--Container">
         {data != [] ? (
           data.map((dt) => (
