@@ -44,6 +44,11 @@ export default function App() {
         display:"flex",
         justifyContent: "center",
       }}><u>Repositorios del stream! de Principiante en Programar</u></h1>
+      <h2 style={{
+        display:"flex",
+        justifyContent: "center",
+        textAlign: "center",
+      }}>Soy Principiante en Programar, soy desarrollador desde hace 5 años.<br/> Soy desarrollador FullStack, y desarrollador en la herramienta de Microsoft - Power Platform</h2>
       <div id="item--Container">
         {data != [] ? (
           data.map((dt) => (
