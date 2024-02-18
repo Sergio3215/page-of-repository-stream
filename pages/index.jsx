@@ -29,7 +29,7 @@ export default function App() {
         create: created_at.replace("T", " ").replace("Z", " "),
         language: language,
         downloads: `https://github.com/Sergio3215/${name}/archive/refs/heads/${default_branch}.zip`,
-        description: (description == null)?"none":description,
+        description: (description == null) ? "none" : description,
       });
     });
 
@@ -43,14 +43,16 @@ export default function App() {
   return (
     <>
       <h1 style={{
-        display:"flex",
+        display: "flex",
         justifyContent: "center",
+        color:"rgb(157 113 224)"
       }}><u>Repositorios del stream! de Principiante en Programar</u></h1>
       <h2 style={{
-        display:"flex",
+        display: "flex",
         justifyContent: "center",
         textAlign: "center",
-      }}>Soy Principiante en Programar, soy desarrollador desde hace 5 años.<br/> Soy desarrollador FullStack, y desarrollador en la herramienta de Microsoft - Power Platform</h2>
+        margin:"30px"
+      }}>Me llamo Principiante en programar en Twitch y Youtube.<br/><br/> Soy Sergio y soy desarrollador desde hace 5 años.<br /> Soy desarrollador FullStack, y desarrollador en la herramienta de Microsoft - Power Platform</h2>
       <div id="item--Container">
         {data != [] ? (
           data.map((dt) => (
@@ -59,26 +61,33 @@ export default function App() {
               alignContent: "center",
               justifyContent: "center",
               textAlign: "center",
-            }}>
+              flexDirection: "column"
+            }} onClick={()=>location.href="https://github.com/Sergio3215/" + dt.name}>
               <div>
-                <h1>
+                <h1
+                  style={{
+                    fontSize:dt.name.length > 26? "27.8px":"28px"
+                  }}>
                   {" "}
                   <Link href={"https://github.com/Sergio3215/" + dt.name}>
                     {dt.name}
                   </Link>{" "}
                 </h1>
               </div>
-              <div>
-                <h3>Descripción: {dt.description}</h3>
-              </div>
-              <div>
-                <h3>Lenguaje: {dt.language}</h3>
-              </div>
-              <div>
-                <h3>Creado: {dt.create}</h3>
-              </div>
-              <div>
-                <h3>Actualizado: {dt.update}</h3>
+              <div
+              style={{
+                height: "120px"
+              }}
+              >
+                {
+                  dt.description != "none" ?
+
+                    <h3 style={{
+                      fontSize:dt.description.length > 55? "19.5px":"20px"
+                    }}>{dt.description}</h3>
+                    :
+                    <></>
+                }
               </div>
               <div>
                 <Link href={dt.downloads} passHref>
